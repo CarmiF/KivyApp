@@ -1,0 +1,8 @@
+kivy
+datetime
+sounddevice
+wavio
+soundfile
+numpy
+speechrecognition
+pyaudio
