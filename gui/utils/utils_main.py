@@ -1,6 +1,32 @@
 
-import datetime
+from datetime import datetime
 import os
+
+
+def filter_date_strings(date_strings, year, month, day):
+    result = []
+    print(year,month,day)
+
+    target_date = datetime(year, month, day)
+
+    for date_string in date_strings:
+        # Parse the date string
+        date_object = datetime.strptime(date_string, '%Y-%m-%d_%H-%M-%S')
+
+        # Check if the date matches the target date
+        if date_object.date() == target_date.date():
+            result.append(date_string)
+
+    return result
+
+
+def get_current_year():
+    current_year = datetime.now().year
+    return current_year
+
+def get_current_month():
+    current_month = datetime.now().month
+    return current_month
 
 def get_time_and_date():
     current_datetime = datetime.datetime.now()

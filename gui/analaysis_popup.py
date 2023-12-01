@@ -91,10 +91,12 @@ class AnalysisPopup():
         print(self.data_folder_names)
 
         for i in range(1, days_in_month + 1):
-            # filter_date_strings(self.data_folder_names, i, )
+            filter_date_strings1= filter_date_strings(self.data_folder_names, int(self.year_btn.text), int(self.month_btn.text),i)
             
-            
-            calendar_layout.add_widget(Button(text=str(i)))
+            if filter_date_strings1==[]:
+                calendar_layout.add_widget(Label(text=str(i)))
+            else:
+                calendar_layout.add_widget(Button(text=str(i)))
         
 
         self.calendar_layout.add_widget(calendar_layout) 
